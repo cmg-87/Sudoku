@@ -100,8 +100,11 @@ public class SudokuGUI extends JFrame{
 							
 							if ( judge() == true ) { 
 								
+								int totalSecond = (int) (System.currentTimeMillis() - startTime) / 1000;
+								int minute = totalSecond / 60;
+								int second = totalSecond % 60;								
 								JOptionPane.showMessageDialog(null, "恭喜你，挑战成功!\n总共用时：" 
-								+ (System.currentTimeMillis() - startTime) / 1000 + "秒",
+								+ minute + "分" + second + "秒",
 								"结果",JOptionPane.INFORMATION_MESSAGE); 
 								
 								Object[] options = {"是","否"};
@@ -173,7 +176,7 @@ public class SudokuGUI extends JFrame{
 			break;
 		case "困难":
 			number = 50;
-			break;			
+			break;
 		}
 		
 		for ( int i = 0; i < number; i++ ) { 
@@ -248,8 +251,7 @@ public class SudokuGUI extends JFrame{
 			} 
 		} 
 		
-		return true; 	
-		
+		return true; 			
 	} 	  
 	
 	// 判断重复
@@ -277,7 +279,8 @@ class ExplainListenerClass implements ActionListener{
 class MessageListenerClass implements ActionListener{ 
 	
 	public void actionPerformed(ActionEvent e){ 
-		JOptionPane.showMessageDialog(null, "由曹鸣皋、杨卓制作",
+		JOptionPane.showMessageDialog(null, "由曹鸣皋、杨卓制作，版权所有\n联系方式："
+				+ "1354620711@qq.com\n           或    2353820667@qq.com",
 				"信息",JOptionPane.INFORMATION_MESSAGE); 
 	} 
 } 
